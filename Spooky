@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Jensen Cool?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #question {
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+        #inputBox {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="question">Is Jensen cool?</div>
+        <input type="text" id="inputBox" placeholder="Type 'yes' here..." />
+    </div>
+
+    <script>
+        document.getElementById("question").onclick = function() {
+            document.getElementById("inputBox").style.display = 'block';
+            document.getElementById("inputBox").focus();
+        };
+
+        document.getElementById("inputBox").onkeydown = function(event) {
+            if (event.key === "Enter") {
+                const answer = this.value.trim();
+                if (answer.toLowerCase() === "yes" || answer === "Yes!" || answer === "Yes.") {
+                    window.location.href = "bagel.html"; // Redirect to the bagel page
+                } else {
+                    alert("Try again!");
+                }
+            }
+        };
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            font-size: 48px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>Bagel</div>
+</body>
+</html>
